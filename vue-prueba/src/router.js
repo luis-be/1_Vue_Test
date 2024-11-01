@@ -1,20 +1,24 @@
-import Vue from "vue"; // Asegúrate de que esta línea sea correcta
-import VueRouter from "vue-router"; // Asegúrate de que esta línea sea correcta
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter); // Esto debería funcionar si Vue está importado correctamente
 
-// Define tus rutas aquí
-import Home from "@/views/HomeView.vue";
-import About from "@/views/AboutView.vue";
-
-const routes = [
-    { path: "/", name: "home", component: Home },
-    { path: "/about", name: "about", component: About }
-];
+import Home from "@/views/Home.vue";
 
 const router = new VueRouter({
-    mode: "history",
+    mode: "history", // Utiliza el modo history para evitar el uso de hashes (#) en las URLs.
     routes
 });
 
 export default router;
+
+const routes = [
+    {
+        path: "/",
+        name: "home",
+        component: Home,
+    }
+];
+
+
+
+Vue.use(VueRouter);
